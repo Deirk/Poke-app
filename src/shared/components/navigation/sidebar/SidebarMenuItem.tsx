@@ -4,14 +4,14 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import styles from './styles/SidebarMenuItem.module.css';
 
-interface Props {
+interface SidebarMenuItemProps {
   path: string;
   icon: JSX.Element;
   title: string;
   subTitle?: string;
 }
 
-export const SidebarMenuItem = ( { path, icon, title, subTitle }: Props ) => {
+export const SidebarMenuItem = ( { path, icon, title, subTitle }: SidebarMenuItemProps ) => {
   const currentPath = useLocation();
 
   return (

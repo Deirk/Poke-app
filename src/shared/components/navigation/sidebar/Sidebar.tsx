@@ -1,5 +1,5 @@
 import { IoHeart } from 'react-icons/io5';
-import PokeballIcon from '../../../assets/images/icons/pokeball.svg';
+import PokeballIcon from '../../../../assets/images/icons/pokeball.svg';
 
 import styles from './styles/Sidebar.module.css';
 import { SidebarMenuItem } from './SidebarMenuItem';

@@ -1,0 +1,24 @@
+
+.LoginPageCard {
+  @apply px-6 py-3 bg-white rounded border w-80;
+}
+
+.LoginTitleContainer {
+  @apply flex flex-col items-center justify-center mb-4;
+}
+
+.LoginTitle {
+  @apply text-2xl font-bold text-red-600;
+}
+
+.LoginSubtitle {
+  @apply text-2xl font-bold;
+}
+
+.LoginButtonContainr {
+  @apply flex flex-col items-center justify-center my-3;
+}
+
+.LoginButton {
+  @apply my-3 py-1 w-full rounded bg-blue-600 text-blue-200;
+}

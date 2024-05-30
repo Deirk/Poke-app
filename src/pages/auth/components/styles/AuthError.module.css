@@ -1,0 +1,3 @@
+.AuthError {
+  @apply text-xs text-red-400 flex justify-between items-center;
+}
