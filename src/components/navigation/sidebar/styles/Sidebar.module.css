@@ -1,0 +1,25 @@
+
+.menuContainer {
+  @apply bg-gray-900 min-h-screen z-10 text-slate-300 w-64 left-0;
+}
+
+.logoContainer {
+  @apply my-4 px-6;
+}
+
+.logoText {
+ @apply flex items-center text-lg md:text-2xl font-bold text-white;
+}
+
+.logoIcon {
+  @apply mr-2;
+}
+
+.sloganText {
+  @apply text-slate-400 text-sm
+}
+
+.navConatiner {
+  @apply w-full px-6
+}
+
