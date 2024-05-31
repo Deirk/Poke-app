@@ -1,0 +1,8 @@
+.favouritePage {
+  @apply flex flex-col flex-wrap gap-2 bg-[#2f2f2f] h-full;
+}
+
+
+.favouriteContainer {
+  @apply mx-10 mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4;
+}

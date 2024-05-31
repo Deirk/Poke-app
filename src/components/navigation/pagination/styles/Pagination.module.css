@@ -1,5 +1,18 @@
+@media (max-width: 1024px) {
+  .paginationContainer {
+    @apply mb-32;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .paginationContainer {
+    @apply my-5;
+  }
+}
+
 .paginationContainer {
-  @apply flex justify-center items-center space-x-4 my-5;
+  @apply flex justify-center items-center space-x-4 ;
 }
 
 .paginationPageCounter {

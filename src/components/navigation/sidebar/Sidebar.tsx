@@ -1,45 +1,49 @@
-import { IoHeart } from 'react-icons/io5';
+import { BiLogOut, BiSolidBookHeart } from 'react-icons/bi';
 import PokeballIcon from '../../../assets/images/icons/pokeball.svg';
 
 import styles from './styles/Sidebar.module.css';
 import { SidebarMenuItem } from './SidebarMenuItem';
+import { useAuthStore } from '../../../config/stores';
 
 const menuItems = [
   {
     path: '/',
-    icon: <img src={PokeballIcon} width={ 40 } height={ 40 } alt='Home icon' />,
+    icon: <img src={ PokeballIcon } width={ 40 } height={ 40 } alt='Home icon' />,
     title: 'Home',
     subTitle: 'Poke App Home',
   },
   {
-    path: '/favorites',
-    icon: <IoHeart size={ 40 } />,
-    title: 'Favorites',
+    path: '/favourites',
+    icon: <BiSolidBookHeart size={ 40 } />,
+    title: 'Favourites',
   },
 ];
 
 export const Sidebar = () => {
+
+  const logout = useAuthStore( state => state.logoutUser );
+
   return (
     <div id="menu"
-      style={ { width: '400px' } }
       className={ styles.menuContainer }>
-      <div id="logo" className={ styles.logoContainer }>
-        <h1 className={ styles.logoText }>
-          <img src={PokeballIcon} width={ 20 } height={ 20 } alt='Home icon' />
-          <span className='ml-2'>Poke App</span>
-        </h1>
-        <p className={ styles.sloganText }>Find All the Pokémon You Love in Our App</p>
-      </div>
+        <div id="logo" className={ styles.logoContainer }>
+          <div className={ styles.logoTitleContainer }>
+            <img src={ PokeballIcon } width={ 20 } height={ 20 } alt='Home icon' />
+            <span >Poke App</span>
+            <BiLogOut className={ styles.logoutButton } onClick={ logout } />
+          </div>
+          <p className={ styles.sloganText }>Find All the Pokémon You Love in Our App</p>
+        </div>
 
-      <div id="nav" className={ styles.navConatiner }>
+        <div id="nav" className={ styles.navConatiner }>
 
-        {
-          menuItems.map( item => (
-            <SidebarMenuItem key={ item.path } { ...item } />
-          ) )
-        }
+          {
+            menuItems.map( item => (
+              <SidebarMenuItem key={ item.path } { ...item } />
+            ) )
+          }
 
-      </div>
+        </div>
     </div>
   );
 };

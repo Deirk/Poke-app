@@ -1,6 +1,6 @@
 import { API_URL } from '../config/constants/constants';
 import { httpClientPlugin } from '../config/plugins/http-client.plugin';
-import { PokemonData, PokemonsResponse, SimplePokemon } from '../interfaces';
+import { Pokemon, PokemonData, PokemonsResponse, SimplePokemon } from '../interfaces';
 
 
 export class PokemonService {
@@ -45,4 +45,11 @@ export class PokemonService {
     return suggestions;
   }
 
+  static getPokemonById = async ( name: string ): Promise<Pokemon> => {
+    const data: Pokemon = await httpClientPlugin.get( `${API_URL}pokemon/${name}` );
+
+    console.log(data);
+
+    return data;
+  }
 }

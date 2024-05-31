@@ -1,7 +1,7 @@
 
 import { IoHeart, IoHeartOutline } from "react-icons/io5";
 
-import { NavLink, Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { SimplePokemon } from '../../interfaces';
 import { useFavouriteStore } from '../../config/stores';
 
@@ -15,7 +15,7 @@ export const PokemonCard = ( { pokemon }: Props ) => {
 
   const navigate = useNavigate();
   const { id, name } = pokemon;
-  const isFavourite = useFavouriteStore( state => !!state.favourites[ id ] );
+  const isFavourite = useFavouriteStore( state => !!state.favourites[ name ] );
   const toggleFavourite = useFavouriteStore( state => state.toggleFavorite );
 
   const onToggle = () => {
@@ -24,7 +24,7 @@ export const PokemonCard = ( { pokemon }: Props ) => {
 
   const onClick = () => {
     console.log( 'click' );
-    return navigate( `/dashboard/pokemons/${ name }` );
+    return navigate( `/pokemon/${ name }` );
   };
 
   return (
@@ -32,7 +32,7 @@ export const PokemonCard = ( { pokemon }: Props ) => {
       <div className={ styles.pokemonCardContent }>
         <div id="pokemon-image-container">
           <img
-            src={ `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png` }
+            src={ `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${ id }.png` }
             className={ styles.pokemonCardImage }
             width={ 0 }
             height={ 0 }
@@ -53,12 +53,7 @@ export const PokemonCard = ( { pokemon }: Props ) => {
         </div>
         <div>
           <p className={ styles.pokemonCardFooterLabel }>
-            {
-              isFavourite ?
-                'Favorite'
-                :
-                'Not favorite'
-            }
+            { isFavourite ? 'Favorite' : 'Not favorite' }
           </p>
         </div>
       </div>

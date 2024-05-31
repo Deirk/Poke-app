@@ -14,15 +14,15 @@ interface FavouriteState {
 const storeApi: StateCreator<FavouriteState> = ( set, get ) => ( {
   favourites: {},
   toggleFavorite: ( pokemon ) => {
-    const { id } = pokemon;
+    const { name } = pokemon;
     const actualState = { ...get().favourites };
 
-    if ( !!actualState[ id ] ) {
-      delete actualState[ id ];
+    if ( !!actualState[ name ] ) {
+      delete actualState[ name ];
       return set( state => ( { ...state, favourites: actualState } ) );
     }
 
-    actualState[ id ] = pokemon;
+    actualState[ name ] = pokemon;
     return set( state => ( { ...state, favourites: actualState } ) );
   },
 } );

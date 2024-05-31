@@ -18,8 +18,7 @@ export const PokemonsGrid = () => {
       <Pagination
         currentPage={ actualPage }
         totalPages={ totalPages }
-        handleUsePagination={ handleUsePagination }
-      />
+        handleUsePagination={ handleUsePagination } />
     </>
   );
 };

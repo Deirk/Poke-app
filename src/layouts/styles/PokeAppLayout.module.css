@@ -7,5 +7,5 @@
 }
 
 .pokeAppContent {
-  @apply grid w-full text-slate-900 bg-[#ef5350];
+  @apply grid w-full text-slate-900 bg-[#ef5350] max-h-screen overflow-y-scroll overscroll-contain;
 }

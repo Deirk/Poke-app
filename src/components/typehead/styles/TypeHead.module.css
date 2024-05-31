@@ -1,17 +1,18 @@
 .typeHead {
-  @apply flex mt-5 mx-10 rounded bg-white;
+  @apply fixed w-5/6;
+}
+
+.typeHeadInputContainer {
+  @apply flex w-11/12 bg-white mx-auto mt-5 rounded ;
 }
 
 .typeHeadInput {
   @apply w-full border-none bg-transparent px-4 py-1 text-gray-400 outline-none focus:outline-none capitalize;
 }
 
-.typeHeadButton {
-  @apply m-2 rounded bg-blue-600 px-4 py-2 text-white;
-}
 
 .suggestionsContainer {
-  @apply bg-white mx-10 rounded text-lg;
+  @apply bg-white rounded text-base w-11/12 mx-auto;
 }
 
 .suggestionItem {

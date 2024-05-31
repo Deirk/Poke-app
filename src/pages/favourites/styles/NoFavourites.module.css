@@ -1,0 +1,11 @@
+.noFavourites {
+  @apply flex flex-col h-[50vh] items-center justify-center;
+}
+
+.noFavouritesIcon {
+  @apply text-white text-9xl;
+}
+
+.noFavouritesText {
+  @apply text-white;
+}

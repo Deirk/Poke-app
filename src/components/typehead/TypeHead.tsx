@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import styles from './styles/TypeHead.module.css';
-import { IoSearch } from 'react-icons/io5';
 import { useSuggestions } from '../../hooks';
 import { PokemonService } from '../../services/pokemon.service';
 
 export const TypeHead = () => {
+  const navigate = useNavigate()
   const [ suggestions, setSuggestions ] = useState<string[]>( [] );
   const {
     filteredSuggestions,
     handleBlur,
     handleInputChange,
-    handleSelectSugestions,
     inputValue,
     showSuggestions
   } = useSuggestions( { suggestions } );
@@ -26,8 +26,8 @@ export const TypeHead = () => {
   }, [] );
 
   return (
-    <>
-      <div className={ styles.typeHead }>
+    <div className={ styles.typeHead }>
+      <div className={styles.typeHeadInputContainer}>
         <input
           className={ styles.typeHeadInput }
           type="text"
@@ -36,10 +36,6 @@ export const TypeHead = () => {
           onBlur={ handleBlur }
           placeholder="Type something..."
         />
-        <button type="submit" className={ styles.typeHeadButton }>
-          <IoSearch />
-        </button>
-
       </div>
       {
         showSuggestions &&
@@ -48,7 +44,7 @@ export const TypeHead = () => {
             <li
               key={ `suggestion-${ suggestion }-${ index }` }
               className={ styles.suggestionItem }
-              onClick={ () => handleSelectSugestions(suggestion)}
+              onClick={ () => navigate(`/pokemon/${suggestion}`)}
             >
               <p
                 className={ styles.suggestion }
@@ -60,6 +56,6 @@ export const TypeHead = () => {
           }
         </ul>
       }
-    </>
+    </div>
   );
 };
