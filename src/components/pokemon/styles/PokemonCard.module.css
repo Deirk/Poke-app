@@ -1,0 +1,35 @@
+.pokemonCard {
+  @apply rounded flex flex-col bg-white overflow-hidden shadow-lg cursor-pointer;
+}
+
+.pokemonCardContent {
+  @apply flex flex-col items-center justify-center text-center p-6 bg-gray-800 border-b hover:bg-[#ef5350];
+}
+
+.pokemonCardImage {
+  @apply w-auto h-[120px];
+}
+
+.pokemonCardName {
+  @apply pt-2 text-lg font-semibold text-gray-50 capitalize;
+}
+
+.pokemonCardId {
+  @apply text-sm text-gray-100;
+}
+
+.pokemonCardId {
+  @apply text-sm text-gray-100;
+}
+
+.pokemonCardFooter {
+  @apply px-4 py-2 hover:bg-gray-300 flex items-center cursor-pointer;
+}
+
+.pokemonCardFooterIcon {
+  @apply text-red-600;
+}
+
+.pokemonCardFooterLabel {
+  @apply pl-3 text-sm font-medium text-gray-800 leading-none;
+}

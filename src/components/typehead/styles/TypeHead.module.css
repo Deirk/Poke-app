@@ -1,0 +1,23 @@
+.typeHead {
+  @apply flex mt-5 mx-10 rounded bg-white;
+}
+
+.typeHeadInput {
+  @apply w-full border-none bg-transparent px-4 py-1 text-gray-400 outline-none focus:outline-none capitalize;
+}
+
+.typeHeadButton {
+  @apply m-2 rounded bg-blue-600 px-4 py-2 text-white;
+}
+
+.suggestionsContainer {
+  @apply bg-white mx-10 rounded text-lg;
+}
+
+.suggestionItem {
+  @apply  hover:bg-gray-400;
+}
+
+.suggestion {
+  @apply text-lg px-2 w-full capitalize;
+}

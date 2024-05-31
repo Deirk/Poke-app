@@ -2,7 +2,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 import styles from './styles/PokeAppLayout.module.css';
 import { useAuthStore } from '../config/stores/auth/auth.store';
-import { Sidebar } from '../shared/components/navigation/sidebar/Sidebar';
+import { Sidebar } from '../components/navigation/sidebar/Sidebar';
 
 export const PokeAppLayout = () => {
 

@@ -5,7 +5,7 @@ import { BiErrorCircle } from 'react-icons/bi';
 import styles from './styles/LoginPage.module.css';
 import { AuthError, AuthInput } from '../components';
 import { useAuthStore } from '../../../config/stores';
-import { useForm } from '../../../shared/hooks/useForm';
+import { useForm } from '../../../hooks';
 
 interface LoginFormData {
   email: string;
@@ -22,7 +22,7 @@ const initialFormState: LoginFormData = {
 };
 
 export const LoginPage = () => {
-  const { formState, handleChange, setFormState } = useForm<LoginFormData>( initialFormState );
+  const { email, password, formState, handleChange, setFormState } = useForm<LoginFormData>( initialFormState );
 
   const navigate = useNavigate();
   const loginUser = useAuthStore( state => state.loginUser );
@@ -52,14 +52,13 @@ export const LoginPage = () => {
       <div className={ styles.LoginPageCard }>
         <div className={ styles.LoginTitleContainer }>
           <h1 className={ styles.LoginTitle }>Poke App</h1>
-          <h2 className={ styles.LoginSubtitle }>Login</h2>
         </div>
         <form onSubmit={ onSubmit }>
           { formState.error && <AuthError message={ formState.errorMessage } icon={ <BiErrorCircle /> } /> }
           <AuthInput
             label='Email'
             name='email'
-            value={ formState.email }
+            value={ email }
             type='email'
             placeholder='Enter your email'
             handleChange={ handleChange }
@@ -67,7 +66,7 @@ export const LoginPage = () => {
           <AuthInput
             label='Password'
             name='password'
-            value={ formState.password }
+            value={ password }
             type='password'
             placeholder='Enter your password'
             handleChange={ handleChange }

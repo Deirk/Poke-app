@@ -1,9 +1,10 @@
 import { StateCreator, create } from 'zustand';
 
-import { AuthService } from '../../../services/auth.service';
+
 import { devtools, persist } from 'zustand/middleware';
 import { AuthStatus } from './interfaces/auth-status.interface';
 import { UserType } from './interfaces/user.interface';
+import { AuthService } from '../../../services/auth.service';
 
 export interface AuthState {
   status: AuthStatus;

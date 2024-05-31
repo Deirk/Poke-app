@@ -1,11 +1,11 @@
 .pokeAppBody {
-  @apply bg-slate-100 overflow-y-scroll w-screen h-screen antialiased text-slate-300 selection:bg-blue-600 selection:text-white;
+  @apply bg-slate-100 w-full h-full antialiased text-slate-300 selection:bg-blue-600 selection:text-white;
 }
 
 .pokeAppContainer {
-  @apply flex;
+  @apply flex w-full;
 }
 
 .pokeAppContent {
-  @apply p-2 w-full text-slate-900;
+  @apply grid w-full text-slate-900 bg-[#ef5350];
 }

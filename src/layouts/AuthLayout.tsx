@@ -1,6 +1,8 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuthStore } from '../config/stores';
 
+import styles from './styles/AuthLayout.module.css';
+
 export const AuthLayout = () => {
   const authStatus = useAuthStore( state => state.status );
 
@@ -9,7 +11,7 @@ export const AuthLayout = () => {
   }
 
   return (
-    <div className='bg-black h-screen w-screen flex justify-center items-center'>
+    <div className={styles.authLayout}>
       <Outlet />
     </div>
   );

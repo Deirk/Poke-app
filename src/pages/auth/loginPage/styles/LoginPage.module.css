@@ -1,6 +1,6 @@
 
 .LoginPageCard {
-  @apply px-6 py-3 bg-white rounded border w-80;
+  @apply px-6 py-3 bg-white rounded-xl border w-80;
 }
 
 .LoginTitleContainer {
@@ -9,10 +9,6 @@
 
 .LoginTitle {
   @apply text-2xl font-bold text-red-600;
-}
-
-.LoginSubtitle {
-  @apply text-2xl font-bold;
 }
 
 .LoginButtonContainr {

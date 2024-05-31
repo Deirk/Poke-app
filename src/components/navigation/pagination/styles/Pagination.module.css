@@ -1,0 +1,7 @@
+.paginationContainer {
+  @apply flex justify-center items-center space-x-4 my-5;
+}
+
+.paginationPageCounter {
+  @apply text-white;
+}
