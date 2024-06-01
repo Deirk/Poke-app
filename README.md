@@ -20,7 +20,7 @@ Steps to testing
 
 ## Actual coverage
 
-[![Captura-de-pantalla-2024-06-01-085228.png](https://i.postimg.cc/vmx84t3t/Captura-de-pantalla-2024-06-01-085228.png)](https://postimg.cc/7CDrc0v5)
+[![Coverage.png](https://i.postimg.cc/vmx84t3t/Captura-de-pantalla-2024-06-01-085228.png)](https://postimg.cc/7CDrc0v5)
 
 # Application operation (If the GIF is not playing, please click on the image.)
 
@@ -75,3 +75,14 @@ Steps to testing
 ### navigation from suggestions
 
 [![poke-app-single-pokemon-page-navigation-from-suggestions.gif](https://i.postimg.cc/6qFVr0CL/poke-app-single-pokemon-page-navigation-from-suggestions.gif)](https://postimg.cc/5QqF1876)
+
+# Responsive
+
+## Desktop
+
+[![desktop.png](https://i.postimg.cc/CLymfhJy/desktop.png)](https://postimg.cc/4n5zDTrw)
+
+## Mobile and tablets
+
+[![mobile-1.png](https://i.postimg.cc/284TQsX1/mobile-1.png)](https://postimg.cc/MvpyxFww)
+[![mobile-2.png](https://i.postimg.cc/13sBJvLJ/mobile-2.png)](https://postimg.cc/kBYW5vMb)

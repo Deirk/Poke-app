@@ -1,9 +1,21 @@
+@media (max-width: 1280px) {
+  .pokemonPageContent {
+    @apply mb-32 mt-5;
+  }
+}
+
+@media (min-width: 1280px) {
+  .pokemonPageContent {
+    @apply my-auto;
+  }
+}
+
 .pokemonPage {
   @apply flex flex-col items-center text-slate-800 h-full bg-[#ef5350];
 }
 
 .pokemonPageContent {
-  @apply relative flex flex-col items-center rounded-[20px] w-8/12 h-auto mx-auto my-auto bg-white bg-clip-border  shadow-lg  p-3;
+  @apply relative flex flex-col items-center rounded-[20px] w-8/12 h-auto mx-auto bg-white bg-clip-border  shadow-lg  p-3;
 }
 
 .pokemonPageHeader {
