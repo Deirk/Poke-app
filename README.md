@@ -11,3 +11,9 @@ Steps to start dev app
 __user:__ test1@google.com
 __password__ 123456
 
+# Test
+Steps to testing
+
+3. Run tests ``` npm run test ```
+4. Run tests in watch mode ``` npm run dev:watch ```
+4. Run test coverage ``` npm run dev:coverage ```
