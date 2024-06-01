@@ -1,5 +1,3 @@
-
-
 import styles from './styles/FavouritePage.module.css';
 import { useFavouriteStore } from '../../config/stores';
 import { PokemonCard } from '../../components/pokemon/PokemonCard';

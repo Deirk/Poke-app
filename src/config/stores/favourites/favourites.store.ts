@@ -1,7 +1,6 @@
 import { StateCreator, create } from 'zustand';
-
-
 import { devtools, persist } from 'zustand/middleware';
+
 import { SimplePokemon } from '../../../interfaces';
 import { SinglePokemonState } from './interfaces/single-pokemon-state.interface';
 
