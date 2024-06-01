@@ -23,7 +23,6 @@ export const PokemonCard = ( { pokemon }: Props ) => {
   };
 
   const onClick = () => {
-    console.log( 'click' );
     return navigate( `/pokemon/${ name }` );
   };
 

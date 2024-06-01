@@ -10,7 +10,7 @@ export const PokeAppLayout = () => {
   const authStatus = useAuthStore( state => state.status );
   const location = useLocation();
 
-  if ( authStatus === 'unauthorized' || authStatus === 'pending' ) {
+  if ( authStatus === 'unauthorized' ) {
     return <Navigate to='/auth/login' />;
   }
 
