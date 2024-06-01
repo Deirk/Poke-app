@@ -22,7 +22,7 @@ Steps to testing
 
 [![Captura-de-pantalla-2024-06-01-085228.png](https://i.postimg.cc/vmx84t3t/Captura-de-pantalla-2024-06-01-085228.png)](https://postimg.cc/7CDrc0v5)
 
-# Application operation
+# Application operation (If gif not move, click on the image)
 
 ## Login
 
