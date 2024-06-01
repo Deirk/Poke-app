@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .MenuItemLink {
     @apply w-20 m-2 py-1 flex flex-col justify-center items-center text-center;
   }
@@ -21,7 +21,7 @@
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .MenuItemLink {
     @apply w-full px-2 inline-flex space-x-2 items-center border-b border-slate-700 py-3  hover:bg-white/5 transition ease-linear duration-150;
   }

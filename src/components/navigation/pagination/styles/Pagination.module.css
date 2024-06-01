@@ -1,11 +1,11 @@
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .paginationContainer {
     @apply mb-32;
   }
 }
 
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
   .paginationContainer {
     @apply my-5;
   }

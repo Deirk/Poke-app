@@ -44,7 +44,7 @@ export const TypeHead = () => {
             <li
               key={ `suggestion-${ suggestion }-${ index }` }
               className={ styles.suggestionItem }
-              onClick={ () => navigate(`/pokemon/${suggestion}`)}
+              onMouseDown={ () => navigate(`/pokemon/${suggestion}`)}
             >
               <p
                 className={ styles.suggestion }

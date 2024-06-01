@@ -8,6 +8,7 @@ import { Pokemon, SimplePokemon } from '../../interfaces';
 import { useFavouriteStore } from '../../config/stores';
 import { IoHeart, IoHeartOutline } from 'react-icons/io5';
 import { Move, PokemonDetailsCard, PokemonType, Sprites } from './components';
+import { motion } from 'framer-motion';
 
 export const PokemonPage = () => {
 
@@ -32,67 +33,74 @@ export const PokemonPage = () => {
   }, [] );
 
   return (
-    <div className={ styles.pokemonPage }>
-      <div className={ styles.pokemonPageContent }>
-        <div className={ styles.pokemonPageHeader }>
-          <div className={ styles.pokemonPageTitleContainer }>
-            <h1 className={ styles.pokemonPageTitle }>
-              #{ pokemon?.id } { pokemon?.name }
-            </h1>
-            <div className={ styles.pokemonPageFavourite } onClick={ onToggle }>
-              { isFavourite ? ( <IoHeart /> ) : ( <IoHeartOutline /> ) }
-              <small className={ styles.pokemonPageFavouriteLabel }>
-                { isFavourite ? 'Favorite' : 'Add favorite' }
-              </small>
+      <div className={ styles.pokemonPage }>
+        <div className={ styles.pokemonPageContent }>
+          <motion.div key={name}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ duration: 0.35, ease: 'easeInOut', delay: 0.15 }}
+          >
+          <div className={ styles.pokemonPageHeader }>
+            <div className={ styles.pokemonPageTitleContainer }>
+              <h1 className={ styles.pokemonPageTitle }>
+                #{ pokemon?.id } { pokemon?.name }
+              </h1>
+              <div className={ styles.pokemonPageFavourite } onClick={ onToggle }>
+                { isFavourite ? ( <IoHeart /> ) : ( <IoHeartOutline /> ) }
+                <small className={ styles.pokemonPageFavouriteLabel }>
+                  { isFavourite ? 'Favorite' : 'Add favorite' }
+                </small>
+              </div>
+            </div>
+            <div className={ styles.pokemonPageImage }>
+              <img
+                src={ pokemon?.sprites.other?.showdown.front_default ?? '' }
+                width={ 150 }
+                height={ 150 }
+                alt={ `${ pokemon?.name } image` }
+                className="mb-5"
+              />
             </div>
           </div>
-          <div className={ styles.pokemonPageImage }>
-            <img
-              src={ pokemon?.sprites.other?.showdown.front_default ?? '' }
-              width={ 150 }
-              height={ 150 }
-              alt={ `${ pokemon?.name } image` }
-              className="mb-5"
-            />
+          <div className={ styles.pokemonPageDetailsContainer }>
+            <PokemonDetailsCard title='Regular Sprites' >
+              <Sprites
+                frontSprite={ pokemon?.sprites.front_default }
+                backSprite={ pokemon?.sprites.back_default }
+                name={ pokemon?.name } />
+            </PokemonDetailsCard>
+            <PokemonDetailsCard title='Shiny Sprites' >
+              <Sprites
+                frontSprite={ pokemon?.sprites.front_shiny }
+                backSprite={ pokemon?.sprites.back_shiny }
+                name={ pokemon?.name } />
+            </PokemonDetailsCard>
+            <PokemonDetailsCard title='Types' >
+              {
+                pokemon?.types.map( ( type, index ) => (
+                  <PokemonType key={ `type-${ type.type.name }-${ index }` } name={ type.type.name } />
+                ) )
+              }
+            </PokemonDetailsCard>
+            <PokemonDetailsCard title='Weight' >
+              <span className={ styles.pokemonPageWeight }>
+                {
+                  `${ pokemon?.weight } kg`
+                }
+              </span>
+            </PokemonDetailsCard>
           </div>
-        </div>
-        <div className={ styles.pokemonPageDetailsContainer }>
-          <PokemonDetailsCard title='Regular Sprites' >
-            <Sprites
-              frontSprite={ pokemon?.sprites.front_default }
-              backSprite={ pokemon?.sprites.back_default }
-              name={ pokemon?.name } />
-          </PokemonDetailsCard>
-          <PokemonDetailsCard title='Shiny Sprites' >
-            <Sprites
-              frontSprite={ pokemon?.sprites.front_shiny }
-              backSprite={ pokemon?.sprites.back_shiny }
-              name={ pokemon?.name } />
-          </PokemonDetailsCard>
-          <PokemonDetailsCard title='Types' >
+          <div className={ styles.pokemonPageMovesContainer }>
+            <p className={ styles.pokemonPageMovesTitle }> Moves </p>
             {
-              pokemon?.types.map( ( type, index ) => (
-                <PokemonType key={ `type-${ type.type.name }-${ index }` } name={ type.type.name } />
+              pokemon?.moves.map( ( move, index ) => (
+                <Move key={ `move-${ move.move.name }-${ index }` } move={ move.move.name } />
               ) )
             }
-          </PokemonDetailsCard>
-          <PokemonDetailsCard title='Weight' >
-            <span className={ styles.pokemonPageWeight }>
-              {
-                `${ pokemon?.weight } kg`
-              }
-            </span>
-          </PokemonDetailsCard>
-        </div>
-        <div className={ styles.pokemonPageMovesContainer }>
-        <p className={ styles.pokemonPageMovesTitle }> Moves </p>
-          {
-            pokemon?.moves.map( ( move, index ) => (
-              <Move key={ `move-${ move.move.name }-${ index }` } move={ move.move.name } />
-            ) )
-          }
+          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
   );
 };

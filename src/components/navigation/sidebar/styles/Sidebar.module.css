@@ -1,4 +1,4 @@
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .menuContainer {
     @apply w-screen block fixed inset-x-0 bottom-0 z-10  bg-gray-900;
   }
@@ -12,7 +12,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
 
   .menuContainer {
     @apply bg-gray-900 min-h-screen z-10 text-slate-300 w-1/6;
@@ -35,7 +35,7 @@
   }
   
   .navConatiner {
-    @apply w-full px-6
+    @apply w-full px-6 flex flex-col
   }
   
   .logoutButton {

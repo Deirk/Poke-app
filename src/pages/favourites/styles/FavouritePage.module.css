@@ -2,7 +2,21 @@
   @apply flex flex-col flex-wrap gap-2 bg-[#2f2f2f] h-full;
 }
 
+@media (max-width: 1280px) {
+  .favouriteContainer {
+    @apply mb-32;
+  }
+}
+
+
+@media (min-width: 1280px) {
+  .favouriteContainer {
+    @apply my-5;
+  }
+}
+
 
 .favouriteContainer {
   @apply mx-10 mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4;
 }
+
