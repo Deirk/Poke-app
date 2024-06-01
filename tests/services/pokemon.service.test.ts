@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 import { PokemonService } from '../../src/services/pokemon.service';
-import { mockPokemonData, mockPokemonSuggestions, mockPokemonsResponse, mockSinglePokemonResponse } from '../config/fixtures/mockPokemon';
+import { mockPokemonData, mockPokemonSuggestions, mockPokemonsResponse, mockSinglePokemonResponse } from '../fixtures/mockPokemon';
 import { PokemonData } from '../../src/interfaces';
 describe( 'services/auth.service.ts test', () => {
 

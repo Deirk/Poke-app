@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 import { useAuthStore } from '../../../../src/config/stores/auth/auth.store';
-import { mockUser } from '../../fixtures/testUser';
+import { mockUser } from '../../../fixtures/testUser';
 
 const initialState = {
   status: 'unauthorized',

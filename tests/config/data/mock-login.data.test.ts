@@ -1,7 +1,7 @@
 import { mockAuthLoginService } from '../../../src/config/data/mock-login.data';
 import { UserType } from '../../../src/config/stores/auth/interfaces/user.interface';
-import { fieldRequiredError, invalidFieldError } from '../fixtures/authError';
-import { mockUser } from '../fixtures/testUser';
+import { fieldRequiredError, invalidFieldError } from '../../fixtures/authError';
+import { mockUser } from '../../fixtures/testUser';
 
 describe( 'config/data/mock-login.data.ts test', () => {
 

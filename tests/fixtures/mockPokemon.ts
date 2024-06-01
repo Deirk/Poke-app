@@ -1,4 +1,4 @@
-import { PokemonData, PokemonsResponse } from '../../../src/interfaces';
+import { PokemonData, PokemonsResponse } from '../../src/interfaces';
 
 export const mockSinglePokemonResponse = {
   id: 1,

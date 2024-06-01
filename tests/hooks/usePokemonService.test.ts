@@ -2,7 +2,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import axios, { AxiosResponse } from 'axios';
 
 import { PaginationActions, usePokemonService } from '../../src/hooks/usePokemonService';
-import { mockPokemonList, mockPokemonsPaginationResponse, mockPokemonsResponse } from '../config/fixtures/mockPokemon';
+import { mockPokemonList, mockPokemonsPaginationResponse, mockPokemonsResponse } from '../fixtures/mockPokemon';
 
 
 describe( 'hooks/usePokemonService.ts test', () => {

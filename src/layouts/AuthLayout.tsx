@@ -1,6 +1,8 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { useAuthStore } from '../config/stores';
 
+import bgImage from '../assets/images/bg/pokemon-bg.jpg';
+
 import styles from './styles/AuthLayout.module.css';
 
 export const AuthLayout = () => {
@@ -11,7 +13,7 @@ export const AuthLayout = () => {
   }
 
   return (
-    <div className={styles.authLayout}>
+    <div className={ `${ styles.authLayout }` } style={ { backgroundImage: `url(${bgImage})` } }>
       <Outlet />
     </div>
   );

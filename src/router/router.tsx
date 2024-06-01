@@ -1,39 +1,54 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { PokeAppLayout } from '../layouts/PokeAppLayout';
-import { AuthLayout } from '../layouts/AuthLayout';
 import { LoginPage } from '../pages/auth/loginPage/LoginPage';
-import { Home } from '../pages/home/Home';
-import { PokemonPage } from '../pages/pokemon/PokemonPage';
-import { FavouriteGrid } from '../pages/favourites/FavouritePage';
+
+
 
 export const router = createBrowserRouter( [
   //private routes
   {
     path: '/',
-    element: <PokeAppLayout />,
+    async lazy() {
+      let { PokeAppLayout } = await import( "../layouts/PokeAppLayout" );
+      return { Component: PokeAppLayout };
+    },
     children: [
       {
         path: '',
-        element: <Home />
+        async lazy() {
+          let { Home } = await import( "../pages/home/Home" );
+          return { Component: Home };
+        },
       },
       {
         path: '/pokemon/:name',
-        element: <PokemonPage />
+        async lazy() {
+          let { PokemonPage } = await import( "../pages/pokemon/PokemonPage" );
+          return { Component: PokemonPage };
+        },
       },
       {
         path: '/favourites',
-        element: <FavouriteGrid />
+        async lazy() {
+          let { FavouriteGrid } = await import( "../pages/favourites/FavouritePage" );
+          return { Component: FavouriteGrid };
+        },
       },
     ]
   },
   //public routes
   {
     path: 'auth',
-    element: <AuthLayout />,
+    async lazy() {
+      let { AuthLayout } = await import( "../layouts/AuthLayout" );
+      return { Component: AuthLayout };
+    },
     children: [
       {
         path: 'login',
-        element: <LoginPage />
+        async lazy() {
+          let { LoginPage } = await import( "../pages/auth/loginPage/LoginPage" );
+          return { Component: LoginPage };
+        },
       }
     ]
 
