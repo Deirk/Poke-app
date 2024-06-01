@@ -19,7 +19,7 @@ export class PokemonService {
       name: pokemon.name
     } ) );
 
-    const totalPages = (data.count / 20).toFixed(0)+1;
+    const totalPages = Number((data.count / 20).toFixed(0))+1;
     const actualPage = this.getActualPage(pathName);
 
 

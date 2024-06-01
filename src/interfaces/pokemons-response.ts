@@ -4,7 +4,7 @@ export interface PokemonData {
   pokemons: SimplePokemon[],
   totalPages: number,
   actualPage: number,
-  nextPage: string,
+  nextPage: string | null,
   previousPage: string | null,
 }
 
