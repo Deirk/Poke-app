@@ -22,7 +22,7 @@ Steps to testing
 
 [![Coverage.png](https://i.postimg.cc/vmx84t3t/Captura-de-pantalla-2024-06-01-085228.png)](https://postimg.cc/7CDrc0v5)
 
-# Application operation (If the GIF is not playing, please click on the image.)
+# Poke App demo (If the GIF is not playing, please click on the image.)
 
 ## Login
 
