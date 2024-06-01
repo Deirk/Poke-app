@@ -16,7 +16,7 @@ export interface AuthState {
 }
 
 const storeApi: StateCreator<AuthState> = ( set ) => ( {
-  status: 'pending',
+  status: 'unauthorized',
   token: undefined,
   user: undefined,
 

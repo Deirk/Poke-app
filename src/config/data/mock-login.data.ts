@@ -1,4 +1,4 @@
-import bcrypt from "bcryptjs";
+import * as bcrypt from 'bcryptjs';
 import { UserType } from '../stores/auth/interfaces/user.interface';
 
 export interface MockLoginDataType {
@@ -18,10 +18,10 @@ const mockUserData: UserType = {
 };
 
 export const mockAuthLoginService = ( email: string, password: string ): UserType => {
+  if ( !email || !password ) throw new Error( 'Email and password is required' );
   const encryptedPassword = bcrypt.hashSync( mockLoginData.password );
 
-  if ( !email || !password ) throw new Error( 'Email and password is required' );
-  if ( ( email !== mockLoginData.email ) || ( !bcrypt.compareSync( password, encryptedPassword ?? '' ) ) ) throw new Error( 'Email or password invalid' );
+  if ( ( email !== mockLoginData.email ) || ( !bcrypt.compareSync( password, encryptedPassword ) ) ) throw new Error( 'Email or password invalid' );
 
   return mockUserData;
 };

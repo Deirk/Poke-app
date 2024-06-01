@@ -1,1 +1,1 @@
-export const API_URL: string = import.meta.env.VITE_BASE_URL;
+export const API_URL: string = process.env.BASE_URL || '';

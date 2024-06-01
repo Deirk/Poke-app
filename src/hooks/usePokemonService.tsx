@@ -34,9 +34,6 @@ export const usePokemonService = () => {
       case PaginationActions.NEXT_PAGE:
         getPokemons(nextPage);
         break;
-
-      default:
-        break;
     }
   };
 

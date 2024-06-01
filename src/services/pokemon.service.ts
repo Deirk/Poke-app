@@ -19,7 +19,7 @@ export class PokemonService {
       name: pokemon.name
     } ) );
 
-    const totalPages = (data.count / 20).toFixed(0);
+    const totalPages = (data.count / 20).toFixed(0)+1;
     const actualPage = this.getActualPage(pathName);
 
 
@@ -47,8 +47,6 @@ export class PokemonService {
 
   static getPokemonById = async ( name: string ): Promise<Pokemon> => {
     const data: Pokemon = await httpClientPlugin.get( `${API_URL}pokemon/${name}` );
-
-    console.log(data);
 
     return data;
   }

@@ -8,17 +8,8 @@ export interface LoginResponse {
 }
 
 export class AuthService {
-
-  static login = async ( email: string, password: string ): Promise<UserType> => {
-    try {
-      const data = mockAuthLoginService( email, password );
-      return data;
-
-    } catch ( error ) {
-      if(error instanceof Error) {
-        throw new Error(error.message);
-      }
-      throw new Error('Unathorized');
-    }
+  static login = ( email: string, password: string ): UserType => {
+    const data = mockAuthLoginService( email, password );
+    return data;
   };
 }
