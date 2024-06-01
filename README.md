@@ -1,5 +1,5 @@
 # Build
-Steps to start dev app
+Steps to build and start app
 
 1. Create a copy of .env.template and rename .env
 2. Replace env variables
