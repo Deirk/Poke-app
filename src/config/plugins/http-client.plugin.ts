@@ -7,7 +7,7 @@ export const httpClientPlugin = {
       return data;
     } catch ( error ) {
       if ( error instanceof AxiosError ) {
-        throw error.response?.data;
+        throw error.message;
       }
     }
   },
