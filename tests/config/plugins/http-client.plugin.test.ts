@@ -16,4 +16,17 @@ describe( 'config/plugins/http-client.plugin.ts test', () => {
 
   } );
 
+  test( 'httpClientPlugin.get() should return an error', async () => {
+
+    try {
+
+      await httpClientPlugin.get( 'https://jsonplaceholder.typicode.com/errorEndpoing/123' );
+
+    } catch ( error ) {
+
+      expect( error ).toBeDefined();
+
+    }
+  } );
+
 } );

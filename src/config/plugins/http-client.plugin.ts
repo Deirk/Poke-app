@@ -1,8 +1,14 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 export const httpClientPlugin = {
   get: async ( path: string ) => {
-    const { data } = await axios.get( path );
-    return data;
+    try {
+      const { data } = await axios.get( path );
+      return data;
+    } catch ( error ) {
+      if ( error instanceof AxiosError ) {
+        throw error.response?.data;
+      }
+    }
   },
 };
