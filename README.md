@@ -20,6 +20,10 @@ Steps to start dev app
 __user:__ user@test.com
 __password__ Test@123
 
+## Note: API url 
+
+__API_URL:__ https://pokeapi.co/api/v2/
+
 # Test
 Steps to testing
 
