@@ -28,11 +28,11 @@ export const usePokemonService = () => {
   const handleUsePagination = ( actions: PaginationActions ) => {
     switch ( actions ) {
       case PaginationActions.PREVIOUS_PAGE:
-        if (previousPage) getPokemons(previousPage);
+        if ( previousPage ) getPokemons( previousPage );
         break;
 
       case PaginationActions.NEXT_PAGE:
-        getPokemons(nextPage);
+        if ( nextPage ) getPokemons( nextPage );
         break;
     }
   };
